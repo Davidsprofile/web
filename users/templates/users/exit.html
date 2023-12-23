@@ -1,0 +1,26 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+  You've Logged out 
+{% endblock %}
+
+{% block content %}
+  <h1>You've logged out</h1>
+  <a href="{% url 'user' %}">Log in Again</a>
+{% endblock %}
+
+
+{% block aside_block %}
+<h4 class="mt-2">Interesting Articles</h4>
+<img src="https://itproger.com/img/news/1591879929.jpg" class="img-thumbnail">
+<p>Check out Godot </p>
+<a href="https://itproger.com/news/285" target="_blank">
+  <button class="btn btn-warning">Check</button>
+</a>
+
+<img src="https://itproger.com/img/news/1589893627.jpg" class="img-thumbnail mt-4">
+<p> Check out Article about Python </p>
+<a href="https://itproger.com/news/285" target="_blank">
+  <button class="btn btn-warning">Check</button>
+</a>
+{% endblock %}

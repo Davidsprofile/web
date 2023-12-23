@@ -1,0 +1,32 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+  {{ title }}
+{% endblock %}
+
+{% block content %}
+  <h1>{{ title }}</h1>
+  <form method="post" class="form-register auth">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-outline-warning" type="submit">{{ btn_text }}</button>
+  </form>
+{% endblock %}
+
+
+{% block aside_block %}
+<h4 class="mt-2">Interesing Articles</h4>
+<img src="https://itproger.com/img/news/1591879929.jpg" class="img-thumbnail">
+<p>There are many talks about Godot. It is time to get along with it.</p>
+
+<a href="https://itproger.com/news/285" target="_blank">
+  <button class="btn btn-warning">Check</button>
+</a>
+
+<img src="https://itproger.com/img/news/1589893627.jpg" class="img-thumbnail mt-4">
+<p>Many people think that Python - Is a language that is used only for web, machine learning or Data Science. In reality, is is more complex.</p>
+
+<a href="https://itproger.com/news/285" target="_blank">
+  <button class="btn btn-warning">Check</button>
+</a>
+{% endblock %}

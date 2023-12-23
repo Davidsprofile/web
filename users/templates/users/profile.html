@@ -1,0 +1,40 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+  User Profile
+{% endblock %}
+
+{% block content %}
+  <h1>User Profile</h1>
+  <div class="media text-muted pt-3">
+    <img class="bd-placeholder-img mr-2 rounded" width="64" height="64" src="{{ user.profile.img.url }}">
+    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      <strong class="d-block text-gray-dark">@{{ user.username }}</strong>
+      {% if user.email %}
+        <b>Email:</b> {{ user.email }}
+      {% endif %}
+    </p>
+  </div>
+  <form method="post" enctype="multipart/form-data" class="form-register mt-4">
+    {% csrf_token %}
+    {{ updateUserForm.as_p }}
+    {{ profileForm.as_p }}
+    <button class="btn btn-outline-warning" type="submit">Refresh</button>
+  </form>
+{% endblock %}
+
+
+{% block aside_block %}
+<h4 class="mt-2">Interesting Articles</h4>
+<img src="https://itproger.com/img/news/1591879929.jpg" class="img-thumbnail">
+<p>Godot </p>
+<a href="https://itproger.com/news/285" target="_blank">
+  <button class="btn btn-warning">Check</button>
+</a>
+
+<img src="https://itproger.com/img/news/1589893627.jpg" class="img-thumbnail mt-4">
+<p>Python Article </p>
+<a href="https://itproger.com/news/285" target="_blank">
+  <button class="btn btn-warning">Check</button>
+</a>
+{% endblock %}
